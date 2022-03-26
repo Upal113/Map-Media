@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Map Media</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <p>Enter Your Name : </p>
+          <div class="form-outline mb-4">
+            <input type="text" name="product-name" id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Enter your name</label>
+          </div>
+        
+        <p>Enter Your Description : </p>
+        <div class="form-outline mb-4">
+            <input type="text" name="product-des" id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Enter your Descripyion</label>
+          </div>
+        
+        
+        <p>Enter your facebook url : </p>
+        <div class="form-outline mb-4">
+            <input type="text" name='fb-link' id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Enter your facebook url</label>
+          </div>
+        
+        
+        <p>Insert Your Image : </p>
+        <input type="file" name='product-image' placeholder="Please Enter The Image Of The Product">
+        <p>Click the button to get your coordinates.</p>
+
+        <input type="button" class="btn-block" onclick="getLocation()" value="Try Your Location. Click Here to Load Your Location"/>
+    
+        <input class="form-control" name="location" id="demo" type="text" value="">
+        <script>
+            var x = document.getElementById("demo");
+            
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+                x.value = "Geolocation is not supported by this browser.";
+              }
+            }
+            
+            function showPosition(position) {
+              x.value = position.coords.latitude+","+ position.coords.longitude;
+            }
+            </script>
+        <button type="submit" class="btn-block">Confirm</button>
+
+    </form>
+</body>
+</html>
+
+
+
