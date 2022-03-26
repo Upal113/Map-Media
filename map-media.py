@@ -11,7 +11,7 @@ import folium
 
 
 # Init firebase with your credentials
-cred = credentials.Certificate('map-media-firebase-adminsdk-n2drj-c5da9f1d62.json')
+cred = credentials.Certificate(**credentials)
 
 
 db_app = initialize_app(credential=cred)
